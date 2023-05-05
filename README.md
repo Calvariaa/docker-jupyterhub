@@ -33,10 +33,16 @@ docker build -t jupyterhub .
 
 Your JupyterHub with JupyterLab is automatically generated during this build.
 
-### Download the image and run the container
+### Run the container
 
 ```sh
 docker run -p 8000:8000 -d --name jupyterhub jupyterhub jupyterhub
+```
+
+If you want to start containers automatically
+
+```sh
+docker run -p 8000:8000 -d --restart=always --name jupyterhub jupyterhub jupyterhub
 ```
 
 ### Download the image, mount a local data directory and run the container
