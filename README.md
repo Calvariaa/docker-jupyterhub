@@ -36,13 +36,13 @@ Your JupyterHub with JupyterLab is automatically generated during this build.
 ### Download the image and run the container
 
 ```sh
-docker run -p 8000:8000 -d --name jupyterhub joergklein/jupyterhub jupyterhub
+docker run -p 8000:8000 -d --name jupyterhub jupyterhub jupyterhub
 ```
 
 ### Download the image, mount a local data directory and run the container
 
 ```sh
-docker run -p 8000:8000 -d --name jupyterhub --volume $(pwd)/datasets:/home/admin/data joergklein/jupyterhub jupyterhub
+docker run -p 8000:8000 -d --name jupyterhub --volume $(pwd)/datasets:/home/admin/data jupyterhub jupyterhub
 ```
 
 - `-p` is used to map your `local port 8000` to the `container port 8000`.
@@ -116,8 +116,5 @@ c.Authenticator.admin_users = {"admin"}
 
 ```sh
 docker exec -it jupyterhub bash
-conda install -c conda-forge <package name>
-
-Example:
-conda install -c conda-forge r-kableextra
+pip install
 ```
