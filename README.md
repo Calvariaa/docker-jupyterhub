@@ -36,19 +36,19 @@ Your JupyterHub with JupyterLab is automatically generated during this build.
 ### Run the container
 
 ```sh
-docker run -p 8000:8000 -d --name jupyterhub jupyterhub jupyterhub
+docker run -p 8000:8000 -d --gpus all --name jupyterhub jupyterhub jupyterhub
 ```
 
 If you want to start containers automatically
 
 ```sh
-docker run -p 8000:8000 -d --restart=always --name jupyterhub jupyterhub jupyterhub
+docker run -p 8000:8000 -d --gpus all --restart=always --name jupyterhub jupyterhub jupyterhub
 ```
 
 ### Download the image, mount a local data directory and run the container
 
 ```sh
-docker run -p 8000:8000 -d --name jupyterhub --volume $(pwd)/datasets:/home/admin/data jupyterhub jupyterhub
+docker run -p 8000:8000 -d --gpus all --name jupyterhub --volume $(pwd)/datasets:/home/admin/data jupyterhub jupyterhub
 ```
 
 - `-p` is used to map your `local port 8000` to the `container port 8000`.
